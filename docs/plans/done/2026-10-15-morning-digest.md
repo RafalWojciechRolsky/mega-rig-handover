@@ -75,3 +75,18 @@ The preview shows lane data on a public link (ADR 0003). Delete the object; the 
 resolving. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link returns nothing.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader: src/digest/ (types.ts + readNight) | — | devin · swe-2 max · default | 2026-10-15 |
+| 2 | Digest page: GET /digest/:night | #1 | devin subagent · swe-2 max · default | 2026-10-15 |
+| 3 | Digest JSON: GET /api/digest/:night | #1 | devin subagent · swe-2 max · default | 2026-10-15 |
+| 4 | Board link: status board links nights to digests | #1, #2 | devin subagent · swe-2 max · default | 2026-10-15 |
+| 5 | Route tests for digest page and JSON | #2, #3 | devin · swe-2 max · default | 2026-10-15 |
+| 6 | Preview for review: /digest/2026-10-28 → public link | #2 | devin · swe-2 max · default | 2026-10-15 |
+| 7 | Clean up: delete preview, move plan to docs/plans/done/ | #6 | devin · swe-2 max · default | 2026-10-15 |
+
+Preview went up and came down through wrangler --temporary; the link returned 404 before
+this plan was filed.
