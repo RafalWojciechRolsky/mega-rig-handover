@@ -30,5 +30,15 @@ export function createApp(config: RigConfig = loadConfig()) {
     );
   });
 
+  // plan.md § 2b: the same rows the digest page renders, as JSON (ADR 0001).
+  app.get('/api/digest/:night', (c) => {
+    const night = c.req.param('night');
+    const digest = readNight(config.runsDir, night);
+    if (digest === null) {
+      return c.json({ error: 'no such night', night }, 404);
+    }
+    return c.json(digest);
+  });
+
   return app;
 }
